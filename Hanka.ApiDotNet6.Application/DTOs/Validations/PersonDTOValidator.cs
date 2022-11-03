@@ -11,7 +11,17 @@ namespace Hanka.ApiDotNet6.Application.DTOs.Validations
       RuleFor(x => x.Document)
       .NotEmpty()
       .NotNull()
-      .WithMessage("Document must be informed")      
+      .WithMessage("Document must be informed");
+
+      RuleFor(x => x.Name)
+      .NotEmpty()
+      .NotNull()
+      .WithMessage("Name must be informed");
+
+      RuleFor(x => x.Phone)
+      .NotEmpty()
+      .NotNull()
+      .WithMessage("Phone must be informed");
     }
-  } 
+  }
 }
