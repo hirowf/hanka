@@ -1,12 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disabled</Nullable>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Hanka.ApiDotNet6.Domain\Hanka.ApiDotNet6.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.2.2" />
   </ItemGroup>
 </Project>
