@@ -21,7 +21,9 @@ namespace Hanka.ApiDotNet6.Infra.Data.Maps
         .HasColumnName("Nome");
       builder.Property(c => c.Phone)
         .HasColumnName("Celular");
-
+      builder.HasMany(c => c.Purchases)
+        .WithOne(p => p.Person)
+        .HasForeignKey(c => c.PersonId);
     }
   }
 }
