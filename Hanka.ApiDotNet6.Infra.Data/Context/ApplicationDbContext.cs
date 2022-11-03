@@ -10,6 +10,8 @@ namespace Hanka.ApiDotNet6.Infra.Data.Context
 
     /* maper entidades e informar que a mesma será uma tabela */
     public DbSet<Person> People { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Purchase> Purchases { get; set; }
 
     /* Sobrescrever o método para aplicar as configurações dessa classe*/
     protected override void OnModelCreating(ModelBuilder modelBuilder)
