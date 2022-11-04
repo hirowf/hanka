@@ -38,7 +38,7 @@ namespace Hanka.ApiDotNet6.Domain.Entities
 
       Name = name;
       Document = document;
-      Phone = Phone;
+      Phone = phone;
     }
   }
 }
