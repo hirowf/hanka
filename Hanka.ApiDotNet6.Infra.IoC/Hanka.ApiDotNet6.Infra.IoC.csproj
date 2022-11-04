@@ -1,14 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disabled</Nullable>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Hanka.ApiDotNet6.Domain\Hanka.ApiDotNet6.Domain.csproj" />
     <ProjectReference Include="..\Hanka.ApiDotNet6.Application\Hanka.ApiDotNet6.Application.csproj" />
     <ProjectReference Include="..\Hanka.ApiDotNet6.Infra.Data\Hanka.ApiDotNet6.Infra.Data.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
   </ItemGroup>
 </Project>
