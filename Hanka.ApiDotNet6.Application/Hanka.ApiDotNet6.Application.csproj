@@ -8,6 +8,7 @@
     <ProjectReference Include="..\Hanka.ApiDotNet6.Domain\Hanka.ApiDotNet6.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
     <PackageReference Include="FluentValidation" Version="11.2.2" />
   </ItemGroup>
 </Project>
