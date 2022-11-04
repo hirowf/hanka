@@ -27,7 +27,7 @@ namespace Hanka.ApiDotNet6.Domain.Entities
     private void Validation(string name, string codeErp, decimal price)
     {
       DomainValidationException.When(string.IsNullOrEmpty(name), "Name cannot be null");
-      DomainValidationException.When(string.IsNullOrEmpty(CodeErp), "CodeErp cannot be null");
+      DomainValidationException.When(string.IsNullOrEmpty(codeErp), "CodeErp cannot be null");
       DomainValidationException.When(price < 0, "Price cannot be less than 0");
 
       Name = name;
