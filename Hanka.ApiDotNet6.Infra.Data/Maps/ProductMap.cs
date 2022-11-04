@@ -12,15 +12,15 @@ namespace Hanka.ApiDotNet6.Infra.Data.Maps
       builder.HasKey(x => x.Id);
 
       builder.Property(x => x.Id)
-        .HasColumnName("IdProduto")
+        .HasColumnName("Idproduto")
         .UseIdentityColumn();
 
       builder.Property(x => x.CodeErp)
-        .HasColumnName("IdPessoa")
+        .HasColumnName("Idpessoa")
         .UseIdentityColumn();
 
       builder.Property(x => x.CodeErp)
-        .HasColumnName("CodeErp");
+        .HasColumnName("Codeerp");
 
       builder.Property(x => x.Name)
         .HasColumnName("Nome");

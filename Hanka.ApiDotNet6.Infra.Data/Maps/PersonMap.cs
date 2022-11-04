@@ -13,7 +13,7 @@ namespace Hanka.ApiDotNet6.Infra.Data.Maps
       builder.ToTable("Pessoa");
       builder.HasKey(c => c.Id);
       builder.Property(c => c.Id)
-        .HasColumnName("IdPessoa")
+        .HasColumnName("Idpessoa")
         .UseIdentityColumn();
       builder.Property(c => c.Document)
         .HasColumnName("Documento");

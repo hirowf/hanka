@@ -14,6 +14,7 @@ namespace Hanka.ApiDotNet6.Domain.Entities
     public Product(string name, string codeErp, decimal price)
     {
       Validation(name, codeErp, price);
+      Purchases = new List<Purchase>();
     }
 
     public Product(int id, string name, string codeErp, decimal price)
@@ -21,6 +22,7 @@ namespace Hanka.ApiDotNet6.Domain.Entities
       DomainValidationException.When(id < 0, "Id must be more informed");
       Id = id;
       Validation(name, codeErp, price);
+      Purchases = new List<Purchase>();
     }
     private void Validation(string name, string codeErp, decimal price)
     {

@@ -17,6 +17,7 @@ namespace Hanka.ApiDotNet6.Domain.Entities
     public Person(string document, string name, string phone)
     {
       Validation(document, name, phone);
+      Purchases = new List<Purchase>();
     }
 
     /*
@@ -27,6 +28,7 @@ namespace Hanka.ApiDotNet6.Domain.Entities
       DomainValidationException.When(id < 0, "Id must be more than zero");
       Id = id;
       Validation(document, name, phone);
+      Purchases = new List<Purchase>();
     }
     private void Validation(string document, string name, string phone)
     {
