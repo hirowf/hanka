@@ -35,6 +35,16 @@ public class PersonService : IPersonService
 
   }
 
+  public async Task<ResultService> DeleteAsync(int id)
+  {
+    var person = await _personRepository.GetByIdAsync(id);
+    if (person == null)
+      return ResultService.Fail("Person not found to remove");
+
+      await _personRepository.DeleteAsync(person);
+      return ResultService.OK($"Person with ID: {id} and Name: {person.Name} was removed");
+  }
+
   public async Task<ResultService<ICollection<PersonDTO>>> GetAsync()
   {
     var person= await _personRepository.GetPeopleAsync();
@@ -47,5 +57,23 @@ public class PersonService : IPersonService
     if (person == null)
       return ResultService.Fail<PersonDTO>("Person not found");
     return ResultService.OK(_mapper.Map<PersonDTO>(person));
+  }
+
+  public async Task<ResultService> UpdateAsync(PersonDTO personDTO)
+  {
+    if (personDTO == null) 
+      return ResultService.Fail("Object must be informed");
+      var validation = new PersonDTOValidator().Validate(personDTO);
+      if (!validation.IsValid)
+        return ResultService.RequestError("Problem with field validations", validation);
+
+        var person = await _personRepository.GetByIdAsync(personDTO.ID);
+        if (person == null)
+          return ResultService.Fail("Person not found");
+        
+        // keep the state of person and just update it
+        person = _mapper.Map<PersonDTO, Person>(personDTO, person);
+        await _personRepository.EditAsync(person);
+        return ResultService.OK("Person edited");  
   }
 }
