@@ -34,4 +34,18 @@ public class PersonService : IPersonService
     return ResultService.OK<PersonDTO>(_mapper.Map<PersonDTO>(data));
 
   }
+
+  public async Task<ResultService<ICollection<PersonDTO>>> GetAsync()
+  {
+    var person= await _personRepository.GetPeopleAsync();
+    return ResultService.OK<ICollection<PersonDTO>>(_mapper.Map<ICollection<PersonDTO>>(person));
+  }
+
+  public async Task<ResultService<PersonDTO>> GetAsyncById(int id)
+  {
+    var person = await _personRepository.GetByIdAsync(id);
+    if (person == null)
+      return ResultService.Fail<PersonDTO>("Person not found");
+    return ResultService.OK(_mapper.Map<PersonDTO>(person));
+  }
 }
