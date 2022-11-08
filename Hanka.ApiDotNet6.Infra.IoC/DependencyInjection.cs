@@ -2,6 +2,7 @@
 using Hanka.ApiDotNet6.Application.Mappings;
 using Hanka.ApiDotNet6.Application.Services;
 using Hanka.ApiDotNet6.Application.Services.Interfaces;
+using Hanka.ApiDotNet6.Domain;
 using Hanka.ApiDotNet6.Domain.Repositories;
 using Hanka.ApiDotNet6.Infra.Data.Context;
 using Hanka.ApiDotNet6.Infra.Data.Repositories;
@@ -19,6 +20,7 @@ namespace Hanka.ApiDotNet6.Infra.IoC
                 options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
       services.AddScoped<IPersonRepository, PersonRepository>();
+      services.AddScoped<IProductRepository, ProductRepository>();
       return services;
     }
 
@@ -26,6 +28,8 @@ namespace Hanka.ApiDotNet6.Infra.IoC
     {
       services.AddAutoMapper(typeof(DomainToDtoMapping));
       services.AddScoped<IPersonService, PersonService>();
+      services.AddScoped<IProductService, ProductService>();
+
       return services;
     }
   }
