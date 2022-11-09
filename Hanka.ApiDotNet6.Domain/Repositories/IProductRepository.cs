@@ -10,6 +10,6 @@ namespace Hanka.ApiDotNet6.Domain
     Task<Product> CreateAsync(Product product);
     Task EditAsync(Product product);
     Task DeleteAsync(Product product);
-
+    Task<int> GetIdByCodErpAsync(string codeErp);
   }
 }
