@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Hanka.ApiDotNet6.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/persons")]
 public class PersonController : ControllerBase
 {
   private readonly IPersonService _personService;
