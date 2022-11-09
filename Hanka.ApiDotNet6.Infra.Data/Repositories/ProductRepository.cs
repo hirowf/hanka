@@ -34,6 +34,12 @@ namespace Hanka.ApiDotNet6.Infra.Data.Repositories
     }
 
     public async Task<Product> GetByIdAsync(int id) => await _db.Products.FirstOrDefaultAsync(x => x.Id == id);
+
+    public async Task<int> GetIdByCodErpAsync(string codeErp)
+    {
+      return (await _db.Products.FirstOrDefaultAsync(x => x.CodeErp == codeErp))?.Id ?? 0;
+    }
+
     public async Task<ICollection<Product>> GetProductsAsync() => await _db.Products.ToListAsync();
   }
 }
