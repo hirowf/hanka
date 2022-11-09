@@ -23,6 +23,7 @@ namespace Hanka.ApiDotNet6.Infra.Data.Maps
         .HasColumnName("idproduto");
 
       builder.Property(x => x.Date)
+        .HasColumnType("date")
         .HasColumnName("datacompra");
 
       /*
